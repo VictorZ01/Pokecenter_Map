@@ -17,12 +17,16 @@ def geocode(address):
 
 coords = []
 for index,row in data.iterrows():
-    address = (row["Address"]+","+row["City"])
+    if index % 5 ==0:
+        print(index)
+    address = (row["Address"]+", "+row["City"])
     latitude, longitude = geocode(address)
-    coords.append((latitude,longitude))
-    time.sleep(1)
+    if latitude == None:
+        print(address)
+    coords.append((latitude,longitude,address))
+    time.sleep(2)
 
 #address =  (data.iloc[0]["Address"]+","+data.iloc[0]["City"])
 #latitude, longitude = geocode(address)
 #print(f"Latitude: {latitude}, Longitude: {longitude}")
-coords.to_csv("locations_with_coordinates.csv", index=False)
+pd.DataFrame(coords).to_csv("locations_with_coordinates.csv", index=False)
