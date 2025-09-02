@@ -133,7 +133,7 @@ if __name__ == "__main__":
     if args.states:
         states = get_list_states(website)
         links = get_link_page(states)
-        csv_filename = "/state_locations.csv"
+        csv_filename = "files/state_locations.csv"
         data_dicts = [
         {"State": row[0], "Link": row[1]}
         for row in links.items()
