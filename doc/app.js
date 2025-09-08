@@ -4,7 +4,7 @@ let userLocationMarker;
 const SUPABASE_URL = 'https://tpxukqnimaudjohiexnj.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRweHVrcW5pbWF1ZGpvaGlleG5qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcyMTU3NjQsImV4cCI6MjA3Mjc5MTc2NH0.w29MWgMmx1QSDCxe6RuoOTTm3v56M_o7WjqpIGi4YPQ';
 // Why you in here bro 
-
+console.log("Script loaded")
 async function fetchLocationsFromSupabase() {
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/PokeLocation?select=*`, {
